@@ -1,6 +1,6 @@
 import { StrictMode, useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Main from './pages/Main.jsx';
 import Societies from './pages/Societies.jsx';
@@ -14,20 +14,20 @@ const App = () => {
     if (storedUser) {
       try {
         setUser(JSON.parse(storedUser));
-      } catch (error) {
+      } catch {
         localStorage.removeItem("user");
       }
     }
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Main user={user} setUser={setUser} />} />
         <Route path="/societies" element={<Societies user={user} setUser={setUser} />} />
         <Route path="/dashboard" element={<Dashboard user={user} setUser={setUser} />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
