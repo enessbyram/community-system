@@ -15,7 +15,7 @@ const Header = ({ onLoginClick, user, onLogout }) => {
                     </Link>
                     <div className='flex flex-col'>
                         <h1 className='font-bold text-xl text-white'>İzmir Demokrasi Üniversitesi</h1>
-                        <h3 className='text-lg text-white'>Topluluk Sistemi</h3>
+                        <h3 className='text-lg text-white'>Öğrenci Toplulukları Bilgi Sistemi</h3>
                     </div>
                 </div>
 
